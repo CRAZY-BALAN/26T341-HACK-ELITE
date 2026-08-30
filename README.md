@@ -1,53 +1,82 @@
-# Inclusa — Inclusive Design Challenge
+# Inclusa — Technology That Adapts to You
 
-An adaptive accessibility platform built with React + Vite + Tailwind CSS v4 + Framer Motion + React Router.
+## Overview
 
-## Run it
+Inclusa is an inclusive digital platform designed to make technology more accessible, understandable, and adaptable to people with different needs and abilities.
 
-```
-npm install
-npm run dev
-```
+Instead of expecting users to adapt to technology, Inclusa follows a user-first approach where technology adapts to the individual.
 
-Then open the printed local URL (usually http://localhost:5173).
+The platform brings accessibility tools, intelligent assistance, emergency support, voice navigation, focus features, multilingual support, resources, and community interaction into a single unified experience.
 
-## Build for production
+## Key Features
 
-```
-npm run build
-npm run preview
-```
+- **Accessibility Center**  
+  Provides personalized accessibility options to create a more comfortable digital experience.
 
-## What's here
+- **Smart Assistant**  
+  Helps users navigate the platform and access information more easily.
 
-- **Landing** (`/`) — choose one of 8 user-group experiences (Elderly, Visual Accessibility,
-  Deaf/Hard of Hearing, Neurodivergent, Low-Income Community, Refugee/Migrant, Mobility Support,
-  Rural/Low Connectivity).
-- **Onboarding** (`/onboarding`) — 3-step preference flow.
-- **Dashboard** (`/dashboard`) — adaptive widget engine: each profile shows a different set and
-  order of widgets, driven by `src/data/profiles.js` + `src/data/widgetContent.js`.
-- **Assistant** (`/assistant`) — mock AI companion with resource-aware replies.
-- **Find Support** (`/resources`, `/resources/:id`) — searchable/filterable resource directory
-  with a simulated map.
-- **Emergency** (`/emergency`) — confirm-before-acting emergency actions.
-- **Accessibility Center** (`/accessibility`) — text size, contrast, motion, voice, captions,
-  low-data — all apply live via `ProfileContext`.
-- **Community** (`/community`), **Profile** (`/profile`, includes a judge Demo Mode to switch
-  profiles live), **Impact** (`/impact`), plus `/voice`, `/focus`, `/languages`.
+- **Emergency Support**  
+  Provides quick and accessible access to emergency-related assistance.
 
-## Where the "adaptive engine" actually lives
+- **Voice Navigation**  
+  Enables users to navigate important sections through voice-based interaction.
 
-- `src/data/profiles.js` — one config object per user group: default accessibility settings,
-  which nav items show, and which dashboard widgets appear, in what order.
-- `src/context/ProfileContext.jsx` — holds the selected profile + accessibility state, persists
-  to `localStorage`, and applies CSS variables/classes (`--profile-hue`, `--base-font-scale`,
-  `.reduce-motion`, `.high-contrast`) to the document root so the whole app responds.
-- `src/components/common/AdaptiveMark.jsx` — the signature brand mark; its stroke weight and
-  rotation are literally driven by the current profile's accessibility settings.
+- **Focus Mode**  
+  Reduces visual distractions and provides a simplified interface for focused interaction.
 
-## Notes
+- **Language Center**  
+  Supports multilingual accessibility and improves usability for users from different language backgrounds.
 
-- All data (resources, community posts, impact numbers) is realistic mock data — no backend.
-- Built to a working core rather than every route in the original brief; extending a new
-  profile-specific page just means adding a route + a widget entry, the adaptive plumbing
-  is already there.
+- **Accessible Resources**  
+  Provides useful information and resources in a simple and user-friendly format.
+
+- **Community**  
+  Creates a space for users to connect, share experiences, and support one another.
+
+- **Personalized Profile**  
+  Allows the platform to maintain user preferences and deliver a more personalized experience.
+
+- **Impact Dashboard**  
+  Represents the platform's accessibility impact and user engagement.
+
+## Problem It Solves
+
+Many existing digital platforms follow a one-size-fits-all approach, which can create barriers for people with different accessibility, cognitive, language, or interaction needs.
+
+Inclusa addresses this challenge by providing a flexible platform that can adapt its experience according to individual user requirements.
+
+## Our Approach
+
+> **Technology should adapt to people, not people to technology.**
+
+Inclusa focuses on accessibility, personalization, simplicity, and independence to create a more inclusive digital environment.
+
+## Target Users
+
+Inclusa is designed to support a wide range of users, including:
+
+- Elderly users
+- Visually impaired users
+- Deaf and hard-of-hearing users
+- Neurodivergent users
+- Users with mobility challenges
+- Users with language barriers
+- Users who require simpler digital interfaces
+
+## Technology Stack
+
+- React.js
+- Vite
+- JavaScript
+- React Router
+- Framer Motion
+- Tailwind CSS
+- Lucide React
+- GitHub Pages
+
+## Vision
+
+Our vision is to build a digital environment where accessibility is not an additional feature, but a fundamental part of the user experience.
+
+**Inclusa — Technology That Adapts to You.**
