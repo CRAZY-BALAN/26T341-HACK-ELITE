@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { ProfileProvider, useProfile } from "./context/ProfileContext";
 import { ToastProvider } from "./components/common/Toast";
@@ -22,31 +22,48 @@ import NotFound from "./pages/NotFound";
 
 function RequireProfile({ children }) {
   const { profile } = useProfile();
-  if (!profile) return <Navigate to="/" replace />;
+
+  if (!profile) {
+    return <Navigate to="/" replace />;
+  }
+
   return children;
 }
 
 function AppRoutes() {
   return (
     <Routes>
+      {/* Public Routes */}
       <Route path="/" element={<Landing />} />
       <Route path="/onboarding" element={<Onboarding />} />
 
-      <Route element={<RequireProfile><AppShell /></RequireProfile>}>
+      {/* Protected Routes */}
+      <Route
+        element={
+          <RequireProfile>
+            <AppShell />
+          </RequireProfile>
+        }
+      >
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/assistant" element={<Assistant />} />
+
         <Route path="/resources" element={<Resources />} />
         <Route path="/resources/:id" element={<ResourceDetails />} />
+
         <Route path="/emergency" element={<Emergency />} />
         <Route path="/accessibility" element={<AccessibilityCenter />} />
         <Route path="/community" element={<Community />} />
+
         <Route path="/profile" element={<Profile />} />
         <Route path="/impact" element={<Impact />} />
+
         <Route path="/voice" element={<VoiceNav />} />
         <Route path="/focus" element={<FocusMode />} />
         <Route path="/languages" element={<LanguageCenter />} />
       </Route>
 
+      {/* 404 */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
@@ -56,11 +73,11 @@ export default function App() {
   return (
     <ProfileProvider>
       <ToastProvider>
-        <BrowserRouter>
+        <HashRouter>
           <AnimatePresence mode="wait">
             <AppRoutes />
           </AnimatePresence>
-        </BrowserRouter>
+        </HashRouter>
       </ToastProvider>
     </ProfileProvider>
   );
